@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Введение</title>
     <style>
+        /* Общий стиль */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,17 +15,45 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Чтобы фон оставался на месте при прокрутке */
+            overflow: hidden;
         }
+
+        /* Шапка */
         header {
             background-color: rgba(42, 157, 244, 0.8); /* Полупрозрачный фон */
             color: white;
             text-align: center;
             padding: 50px 0;
         }
+
         header h1 {
             font-size: 36px;
             margin: 0;
         }
+
+        /* Навигационное меню */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2a9df4;
+            border-radius: 5px;
+        }
+
+        /* Основная часть */
         main {
             display: flex;
             flex-direction: column;
@@ -35,29 +64,93 @@
             padding: 20px;
             border-radius: 10px;
         }
+
+        /* Кнопка с переливающимися цветами */
         .btn {
             display: inline-block;
-            background-color: #2a9df4;
-            color: white;
             padding: 15px 30px;
             text-decoration: none;
             font-size: 18px;
             border-radius: 5px;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
+            color: white;
+            background: linear-gradient(45deg, #ff6f61, #42a5f5, #ab47bc, #ffca28);
+            background-size: 300% 300%;
+            animation: gradient 3s ease infinite;
+            border: none;
+            cursor: pointer;
         }
+
         .btn:hover {
-            background-color: #1b7fc4;
+            transform: scale(1.05);
+        }
+
+        /* Анимация кнопки */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Снежинки */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.5;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Навигационное меню -->
+    <nav>
+        <a href="index.html">Главная</a> |
+        <a href="about.html">Обо мне</a> |
+        <a href="projects.html">Мои проекты</a> |
+        <a href="blog.html">Блог</a> |
+        <a href="portfolio.html">Портфолио</a> |
+        <a href="resources.html">Ресурсы</a> |
+        <a href="contacts.html">Контакты</a>
+    </nav>
+
     <header>
         <h1>Введение</h1>
     </header>
+    
     <main>
         <p>Добро пожаловать на мою страницу! Узнайте больше обо мне и моих проектах.</p>
         <a href="about.html" class="btn">Обо мне</a>
     </main>
+
+    <!-- Снежинки -->
+    <script>
+        const createSnowflake = () => {
+            const snowflake = document.createElement('div');
+            snowflake.textContent = '❄';
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000); // Удаление снежинки после анимации
+        };
+
+        setInterval(createSnowflake, 200); // Создание снежинок каждые 200мс
+    </script>
 </body>
 </html>
