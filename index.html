@@ -34,23 +34,43 @@
         /* Навигационное меню */
         nav {
             text-align: center;
-            margin: 20px 0;
+            margin-top: 20px;
             background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px;
+            padding: 15px;
+            border-radius: 10px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 15px 20px;
             font-size: 18px;
-            margin: 0 10px;
-            transition: background-color 0.3s;
+            margin: 0 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         nav a:hover {
             background-color: #2a9df4;
-            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        nav a:active {
+            animation: pulse 0.6s ease-in-out;
+        }
+
+        /* Пульсация при нажатии */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* Основная часть */
@@ -114,21 +134,21 @@
     </style>
 </head>
 <body>
-    <!-- Навигационное меню -->
-    <nav>
-        <a href="index.html">Главная</a> |
-        <a href="about.html">Обо мне</a> |
-        <a href="projects.html">Мои проекты</a> |
-        <a href="blog.html">Блог</a> |
-        <a href="portfolio.html">Портфолио</a> |
-        <a href="resources.html">Ресурсы</a> |
-        <a href="contacts.html">Контакты</a>
-    </nav>
-
     <header>
         <h1>Введение</h1>
     </header>
-    
+
+    <!-- Навигационное меню -->
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="projects.html">Мои проекты</a>
+        <a href="blog.html">Блог</a>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="resources.html">Ресурсы</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+
     <main>
         <p>Добро пожаловать на мою страницу! Узнайте больше обо мне и моих проектах.</p>
         <a href="about.html" class="btn">Обо мне</a>
