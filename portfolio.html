@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-image: url('bgsite.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: rgba(42, 157, 244, 0.8);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #ffdb58;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: auto;
+        }
+        .portfolio-image {
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2a9df4;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1b7fc4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Портфолио</h1>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a> |
+        <a href="about.html">Обо мне</a> |
+        <a href="projects.html">Мои проекты</a> |
+        <a href="blog.html">Блог</a> |
+        <a href="portfolio.html">Портфолио</a> |
+  <a href="resources.html">Ресурсы</a> |
+        <a href="contacts.html">Контакты</a>
+    </nav>
+    <main>
+        <section>
+            <h2>Проект 1: Разработка сайта для школы</h2>
+            <img src="project1.jpg" alt="Проект 1" class="portfolio-image">
+            <p>Описание: Я разработал веб-сайт для школы, который включает онлайн-расписание и раздел для новостей. Это был мой первый проект, и я использовал HTML, CSS, и JavaScript.</p>
+            <a href="https://example.com" class="btn">Посмотреть проект</a>
+        </section>
+        <section>
+            <h2>Проект 2: Анализ данных для бизнеса</h2>
+            <img src="project2.jpg" alt="Проект 2" class="portfolio-image">
+            <p>Описание: В этом проекте я провел анализ данных для малого бизнеса, помогая оптимизировать процессы. Я использовал Python и библиотеки для обработки данных.</p>
+            <a href="https://example.com" class="btn">Посмотреть проект</a>
+        </section>
+    </main>
+</body>
+</html>
